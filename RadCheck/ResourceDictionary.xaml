@@ -1,0 +1,87 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- 主题颜色 -->
+    <SolidColorBrush x:Key="MainBlue" Color="#0066CC"/>
+    <SolidColorBrush x:Key="DarkBlue" Color="#0A2463"/>
+    <SolidColorBrush x:Key="LightBlue" Color="#3E92CC"/>
+    <SolidColorBrush x:Key="TextWhite" Color="White"/>
+    <SolidColorBrush x:Key="TextLightGray" Color="#CCCCCC"/>
+
+    <!-- 按钮样式 -->
+    <Style TargetType="Button" x:Key="ActionButtonStyle">
+        <Setter Property="Background" Value="LightBlue"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#60A5FA"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#1E40AF"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="TransparentButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                 BorderBrush="{TemplateBinding BorderBrush}"
+                 BorderThickness="{TemplateBinding BorderThickness}"
+                 CornerRadius="50">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MenuItemButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Padding" Value="15,10"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border" 
+                 Background="{TemplateBinding Background}"
+                 BorderBrush="{TemplateBinding BorderBrush}"
+                 BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                               Margin="{TemplateBinding Padding}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource MenuItemHoverBackground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- 阴影效果 -->
+    <DropShadowEffect x:Key="MenuDropShadow" BlurRadius="20" ShadowDepth="0" Color="#40000000"/>
+
+    <!-- 颜色资源 -->
+    <SolidColorBrush x:Key="MenuBackgroundBrush" Color="White"/>
+    <SolidColorBrush x:Key="MenuBorderBrush" Color="#E0E0E0"/>
+    <SolidColorBrush x:Key="MenuItemHoverBackground" Color="#F5F5F5"/>
+
+    <Style x:Key="UserIconKey" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="pack://application:,,,/Assets/#iconfont"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+</ResourceDictionary>

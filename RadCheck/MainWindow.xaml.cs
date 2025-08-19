@@ -5,6 +5,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -19,6 +20,14 @@ namespace RadCheck
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+        private void UserAvatarButton_Click(object sender, RoutedEventArgs e)
+        {
+            UserMenuPopup.IsOpen = true;
+            var storyboard = (Storyboard)UserMenuPopup.Resources["OpenMenuAnimation"];
+            storyboard.Begin((FrameworkElement)UserMenuPopup.Child);
         }
     }
 }
