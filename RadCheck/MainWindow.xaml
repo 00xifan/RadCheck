@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadCheck"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="1000">
     <Window.Resources>
 
     </Window.Resources>
@@ -19,7 +19,6 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="{StaticResource MainBlue}">
             <TextBlock Text="&#xe615;" FontSize="30" FontWeight="ExtraBold" Foreground="White" Margin="10 0" Style="{StaticResource UserIconKey}"/>
             <TextBlock Text="放射性废物袋测量系统" FontSize="30" Foreground="{StaticResource TextWhite}" FontWeight="Bold" FontStyle="Italic" VerticalAlignment="Center"/>
-
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
 
@@ -91,7 +90,7 @@
                         <StackPanel Grid.Row="1">
                             <Button Style="{StaticResource MenuItemButtonStyle}">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xe66a;" 
+                                    <TextBlock Text="&#xe66a;"
                                                Style="{StaticResource UserIconKey}"/>
                                     <TextBlock Text="管理个人资料" Margin="10,0,0,0"/>
                                 </StackPanel>
@@ -99,7 +98,7 @@
 
                             <Button Style="{StaticResource MenuItemButtonStyle}">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xe600;" 
+                                    <TextBlock Text="&#xe600;" FontSize="17" Margin="-2 0 0 0"
                                                Style="{StaticResource UserIconKey}"/>
                                     <TextBlock Text="设置" Margin="10,0,0,0"/>
                                 </StackPanel>
@@ -107,7 +106,7 @@
 
                             <Button Style="{StaticResource MenuItemButtonStyle}">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xe603;" 
+                                    <TextBlock Text="&#xe603;" FontSize="14"
                                                Style="{StaticResource UserIconKey}"/>
                                     <TextBlock Text="历史记录" Margin="10,0,0,0"/>
                                 </StackPanel>
@@ -115,7 +114,7 @@
 
                             <Button Style="{StaticResource MenuItemButtonStyle}">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xe601;" 
+                                    <TextBlock Text="&#xe601;" FontSize="18" Margin="0 0 -2 0"
                                                Style="{StaticResource UserIconKey}"/>
                                     <TextBlock Text="下载" Margin="10,0,0,0"/>
                                 </StackPanel>
@@ -128,7 +127,8 @@
                         <Border Grid.Row="3" BorderThickness="0,1,0,0" BorderBrush="#E0E0E0">
                             <Button Style="{StaticResource MenuItemButtonStyle}">
                                 <StackPanel Orientation="Horizontal">
-                                    <!--<Image Source="/Assets/icons/signout.png" Width="16"/>-->
+                                    <TextBlock Text="&#xe604;" FontSize="15" Margin="3 0 0 0"
+                                               Style="{StaticResource UserIconKey}"/>
                                     <TextBlock Text="退出" Margin="10,0,0,0"/>
                                 </StackPanel>
                             </Button>
@@ -144,120 +144,203 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5">
-                <!-- 表污探测器一（数据表格） -->
-                <DataGrid ItemsSource="{Binding SurfaceDetector1Data}" Margin="0,5,0,0">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="表面污染探测器一" Binding="{Binding DetectorName}" Width="150"/>
-                        <DataGridTextColumn Header="0°" Width="60">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                    <Setter Property="TextAlignment" Value="Center"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="60°" Width="60">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                    <Setter Property="TextAlignment" Value="Center"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="120°" Width="60">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                    <Setter Property="TextAlignment" Value="Center"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="180°"  Width="60">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                    <Setter Property="TextAlignment" Value="Center"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="240°" Width="60">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                    <Setter Property="TextAlignment" Value="Center"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="300°"  Width="60">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>gin="10,10,10,1gin="10,10,10,10">
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                    <Setter Property="TextAlignment" Value="Center"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
 
-                <!-- 表污探测器二、三（结构同上，仅ItemsSource绑定不同ViewModel属性） -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
 
 
-                <!-- γ探测器（数据表格） -->
-                <!--
-                <DataGrid ItemsSource="{Binding GammaDetectorData}" Style="{StaticResource DetectorDataGridStyle}" Margin="0,5,0,0">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="γ探头" Binding="{Binding DetectorName}" Width="150"/>
-                        -->
-                <!-- 角度列同上 -->
-                <!--
-                    </DataGrid.Columns>
-                </DataGrid>-->
-            </StackPanel>
+
+                <Grid Grid.Column="0">
+                    <Border Background="#0744ae" CornerRadius="10" SnapsToDevicePixels="False">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="12" ShadowDepth="0" Color="#66003366" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Center">
+                        <TextBlock Text="表面污染探测器 &#x0A; — 底" Foreground="White" FontFamily="Arial Black" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/Images/probe.png" Width="40" Height="40" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="1" Margin="10 3" Height="60">
+                    <DataGrid x:Name="DetectorLowDataGrid"
+                              Style="{StaticResource CommonDataGridStyle}"
+                              ItemsSource="{Binding DetectorLowData}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="0°" Width="*" Binding="{Binding Angle0, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="60°" Width="*" Binding="{Binding Angle60, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="120°" Width="*" Binding="{Binding Angle120, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="180°" Width="*" Binding="{Binding Angle180, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="240°" Width="*" Binding="{Binding Angle240, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="300°" Width="*" Binding="{Binding Angle300, StringFormat=F2}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="0">
+                    <Border Background="#0744ae" CornerRadius="10" SnapsToDevicePixels="False">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="12" ShadowDepth="0" Color="#66003366" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Center">
+                        <TextBlock Text="表面污染探测器 &#x0A; — 中" Foreground="White" FontFamily="Arial Black" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/Images/probe.png" Width="40" Height="40" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="1" Margin="10 3" Height="60">
+                    <DataGrid x:Name="DetectorMediumDataGrid"
+                              Style="{StaticResource CommonDataGridStyle}"
+                              ItemsSource="{Binding DetectorMediumData}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="0°" Width="*" Binding="{Binding Angle0, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="60°" Width="*" Binding="{Binding Angle60, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="120°" Width="*" Binding="{Binding Angle120, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="180°" Width="*" Binding="{Binding Angle180, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="240°" Width="*" Binding="{Binding Angle240, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="300°" Width="*" Binding="{Binding Angle300, StringFormat=F2}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+                <Grid Grid.Row="4" Grid.Column="0">
+                    <Border Background="#0744ae" CornerRadius="10" SnapsToDevicePixels="False">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="12" ShadowDepth="0" Color="#66003366" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Center">
+                        <TextBlock Text="表面污染探测器 &#x0A; — 高" Foreground="White" FontFamily="Arial Black" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/Images/probe.png" Width="40" Height="40" Margin="0,0,0,0" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="4" Grid.Column="1" Margin="10 3" Height="60">
+                    <DataGrid x:Name="DetectorHeightDataGrid"
+                 Style="{StaticResource CommonDataGridStyle}"
+                 ItemsSource="{Binding DetectorHighData}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="0°" Width="*" Binding="{Binding Angle0, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="60°" Width="*" Binding="{Binding Angle60, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="120°" Width="*" Binding="{Binding Angle120, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="180°" Width="*" Binding="{Binding Angle180, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="240°" Width="*" Binding="{Binding Angle240, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="300°" Width="*" Binding="{Binding Angle300, StringFormat=F2}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+                <Grid Grid.Row="6" Grid.Column="0">
+                    <Border Background="#0744ae" CornerRadius="10" SnapsToDevicePixels="False">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="12" ShadowDepth="0" Color="#66003366" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Center">
+                        <TextBlock Text="伽马探头" Foreground="White" FontFamily="Arial Black" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        <Image Source="/Assets/Images/probe.png" Width="40" Height="40" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="6" Grid.Column="1" Margin="10 3" Height="60">
+                    <DataGrid x:Name="DetectorGammaDataGrid"
+                              Style="{StaticResource CommonDataGridStyle}"
+                              ItemsSource="{Binding DetectorGammaData}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="0°" Width="*" Binding="{Binding Angle0, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="60°" Width="*" Binding="{Binding Angle60, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="120°" Width="*" Binding="{Binding Angle120, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="180°" Width="*" Binding="{Binding Angle180, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="240°" Width="*" Binding="{Binding Angle240, StringFormat=F2}"/>
+                            <DataGridTextColumn Header="300°" Width="*" Binding="{Binding Angle300, StringFormat=F2}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </Grid>
 
             <!-- 右侧：最大值与报警阈值区 -->
-            <Grid Grid.Column="1" Margin="15,5,-5,5">
+            <Grid Grid.Column="1" Margin="15,5,10,5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <!-- 表污探头最大值面板 -->
-                <Border Grid.Row="0" Background="DarkBlue" BorderBrush="LightBlue" BorderThickness="1" Margin="0,5,0,0" Padding="10">
-                    <StackPanel>
-                        <TextBlock Text="表污探头最大数据" Foreground="{StaticResource TextLightGray}" FontSize="14" Margin="0,0,0,10"/>
-                        <TextBlock Text="SurfaceMaxValue" FontSize="36" FontWeight="Bold" Foreground="{StaticResource TextWhite}" HorizontalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <TextBlock Text="报警阈值:" Foreground="{StaticResource TextLightGray}"/>
-                            <TextBox Text="SurfaceAlarmThreshold" Width="80" Background="#1A3A57" BorderBrush="LightBlue" Foreground="{StaticResource TextWhite}" Margin="5,0,0,0"/>
+                <Grid>
+                    <Border Background="{StaticResource MainBlue}" CornerRadius="10" SnapsToDevicePixels="False">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="12" ShadowDepth="0" Color="#66003366" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                        <TextBlock Text="表污探头最大数据" Foreground="{StaticResource TextWhite}" FontSize="20" FontFamily="Arial Black" TextAlignment="Center"/>
+                        <Rectangle Height="1" Fill="LightBlue" Margin="0 3"/>
+                        <TextBlock Text="1000" FontSize="36" FontWeight="Bold" Foreground="{StaticResource TextWhite}" TextAlignment="Center" Margin="0 10"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                            <TextBlock Text="报警阈值：" Foreground="WhiteSmoke" FontFamily="Arial" FontSize="20" TextAlignment="Center" Margin="0 2 0 0"/>
+                            <TextBlock Text="0.00" Foreground="{StaticResource TextWhite}" FontSize="20" TextAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
-                </Border>
+                </Grid>
 
                 <!-- γ探头最大值面板（结构同上） -->
-                <Border Grid.Row="1" Background="DarkBlue" BorderBrush="LightBlue" BorderThickness="1" Margin="0,10,0,0" Padding="10">
-                    <StackPanel>
-                        <TextBlock Text="γ探头最大数据" Foreground="{StaticResource TextLightGray}" FontSize="14" Margin="0,0,0,10"/>
-                        <TextBlock Text="GammaMaxValue" FontSize="36" FontWeight="Bold" Foreground="{StaticResource TextWhite}" HorizontalAlignment="Center"/>
-                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <TextBlock Text="报警阈值:" Foreground="{StaticResource TextLightGray}"/>
-                            <TextBox Text="GammaAlarmThreshold" Width="80" Background="#1A3A57" BorderBrush="LightBlue" Foreground="{StaticResource TextWhite}" Margin="5,0,0,0"/>
+                <Grid Grid.Row="1" Margin="0 10">
+                    <Border Background="{StaticResource MainBlue}" CornerRadius="10" SnapsToDevicePixels="False">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="12" ShadowDepth="0" Color="#66003366" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                        <TextBlock HorizontalAlignment="Center">
+                            <Run Text="γ" Foreground="{StaticResource TextWhite}" FontSize="16" />
+                            <Run Text="探头最大数据" Foreground="{StaticResource TextWhite}" FontSize="20" FontFamily="Arial Black"/>
+                        </TextBlock>
+                        <Rectangle Height="1" Fill="LightBlue" Margin="0 3"/>
+                        <TextBlock Text="1000" FontSize="36" FontWeight="Bold" Foreground="{StaticResource TextWhite}" TextAlignment="Center" Margin="0 10"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                            <TextBlock Text="报警阈值：" Foreground="WhiteSmoke" FontFamily="Arial" FontSize="20" TextAlignment="Center" Margin="0 2 0 0"/>
+                            <TextBlock Text="0.00" Foreground="{StaticResource TextWhite}" FontSize="20" TextAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
-                </Border>
+                </Grid>
             </Grid>
 
             <!-- 控制按钮区（底部居中） -->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                <Button Content="开始测量" Style="{StaticResource ActionButtonStyle}"/>
-                <Button Content="停止测量" Style="{StaticResource ActionButtonStyle}"/>
-                <Button Content="保存数据"  Style="{StaticResource ActionButtonStyle}"/>
-                <Button Content="打印标签" Style="{StaticResource ActionButtonStyle}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" >
+
+                <Grid Margin="10">
+                    <Border Background="#F0F0F0" SnapsToDevicePixels="False">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="12" ShadowDepth="0" Color="#66003366" Opacity="0.6"/>
+                        </Border.Effect>
+                    </Border>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                        <Button Content="开始测量" Style="{StaticResource ActionButtonStyle}"/>
+                        <Button Content="停止测量" Style="{StaticResource ActionQuitButtonStyle}"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="100 10">
+                    <Border Background="#F0F0F0" SnapsToDevicePixels="True"/>
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                        <Button Content="保存数据" Style="{StaticResource ActionButtonStyle}"/>
+                        <Button Content="打印标签" Style="{StaticResource ActionQuitButtonStyle}"/>
+                    </StackPanel>
+                </Grid>
             </StackPanel>
         </Grid>
     </Grid>

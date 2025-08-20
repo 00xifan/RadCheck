@@ -10,10 +10,13 @@
 
   <ItemGroup>
     <None Remove="Assets\iconfont.ttf" />
+    <None Remove="Assets\Images\probe.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Images\" />
+    <Resource Include="Assets\Images\probe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
