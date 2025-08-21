@@ -10,9 +10,7 @@
     <!-- 按钮样式 -->
     <Style TargetType="Button" x:Key="ActionButtonStyle">
         <Setter Property="Background" Value="#2563EB"/>
-        <!-- 现代感更强的科技蓝 -->
         <Setter Property="Foreground" Value="#F8FAFC"/>
-        <!-- 柔和的冷白色 -->
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontFamily" Value="Arial Black"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -34,18 +32,12 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <!-- 悬停色：提升亮度 + 色相微调 -->
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#4F86F7"/>
-                <!-- 原#60A5FA -->
             </Trigger>
-
-            <!-- 按压色：加深色阶 + 文字微调 -->
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Background" Value="#1A3D8F"/>
-                <!-- 原#1E40AF -->
                 <Setter Property="Foreground" Value="#EFF6FF"/>
-                <!-- 更柔和的白色 -->
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -83,7 +75,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
 
     <Style x:Key="TransparentButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
@@ -203,5 +194,72 @@
         <Setter Property="ColumnHeaderStyle" Value="{StaticResource CommonColumnHeaderStyle}"/>
         <Setter Property="RowStyle" Value="{StaticResource CommonRowStyle}"/>
         <Setter Property="CellStyle" Value="{StaticResource CommonCellStyle}"/>
+    </Style>
+
+    <!-- 按钮样式 -->
+    <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#3498DB"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="3" 
+                                Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#2980B9"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#2471A3"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="#BDC3C7"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SecondaryButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#ECF0F1"/>
+        <Setter Property="Foreground" Value="#34495E"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="#BDC3C7"
+                                BorderThickness="1"
+                                CornerRadius="3" 
+                                Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#D5DBDB"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#B2BABB"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SmallButtonStyle" TargetType="Button" BasedOn="{StaticResource SecondaryButtonStyle}">
+        <Setter Property="Padding" Value="5,2"/>
+        <Setter Property="FontSize" Value="12"/>
     </Style>
 </ResourceDictionary>
